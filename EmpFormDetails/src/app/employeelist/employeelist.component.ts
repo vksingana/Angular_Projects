@@ -9,6 +9,8 @@ import { EmployeeService } from '../employee.service';
 })
 export class EmployeelistComponent implements OnInit {
   empForm: any;
+  employees: Employee
+  
 
   constructor(private empService: EmployeeService) {
     this.empService.getEmpList();
@@ -32,6 +34,11 @@ export class EmployeelistComponent implements OnInit {
     });
   }
 
+  getEmpLists() {
+    this.empService.getEmpList().subscribe(res => {
+      this.employees = res;
+    });
+  }
   deleteEmp(id) {
     if (confirm("Are you Sure you want to delete?")) {
       this.empService.deleteEmp(id).subscribe(res => {

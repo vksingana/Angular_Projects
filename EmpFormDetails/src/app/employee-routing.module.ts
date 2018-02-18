@@ -19,10 +19,6 @@ const empRoutes: Routes = [
     {
         path: '**',
         component: PageNotFoundComponent
-    },
-    {
-        path: 'emplist',
-        component: EmployeelistComponent
     }
 ];
 

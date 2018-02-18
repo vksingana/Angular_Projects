@@ -1,5 +1,6 @@
 {
-  "Employees": [{
+  "Employees": [
+    {
       "id": 1,
       "empID": "E1",
       "jobTitle": "Program Directory",
@@ -52,6 +53,24 @@
       "phone": "1111111111",
       "email": "kumaasajs.sasas@gmail.com",
       "id": 6
+    },
+    {
+      "empID": "nani",
+      "jobTitle": "naian",
+      "empName": "naaja",
+      "department": "jajajaj",
+      "phone": "9393838328",
+      "email": "kuamr@gail.com",
+      "id": 7
+    },
+    {
+      "empID": "madhu",
+      "jobTitle": "madhu",
+      "empName": "madhu",
+      "department": "madhu",
+      "phone": "99383838382",
+      "email": "madhu@gmail.com",
+      "id": 8
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Employee } from './../employee.interface';
 import { EmployeeService } from './../employee.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,16 +11,15 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./employee-form.component.css']
 })
 export class EmployeeFormComponent implements OnInit {
-
   isForm: boolean
-  isSubmit:boolean
+  isSubmit: boolean
   isUpdate: boolean
   isClose: boolean
   empForm: FormGroup
   employees: Employee
   empRequest: Employee = <Employee>{}
 
-  constructor(private empService: EmployeeService) {
+  constructor(private empService: EmployeeService, private router: Router) {
     this.isSubmit = true;
     this.isForm = true;
     this.isUpdate = false;
@@ -37,7 +37,7 @@ export class EmployeeFormComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')])
     })
   }
-  addEmpForm() {
+  addEmpForm(empForm) {
     this.empRequest = <Employee>{};
     this.empRequest.empID = this.empForm.controls['empID'].value;
     this.empRequest.jobTitle = this.empForm.controls['jobTitle'].value;
@@ -47,16 +47,10 @@ export class EmployeeFormComponent implements OnInit {
     this.empRequest.email = this.empForm.controls['email'].value;
     this.empService.addEmp(this.empRequest).subscribe(res => {
       console.log(res);
-      this.isForm = false;
-      this.empForm.reset();
-      this.getEmpLists();
+      this.empService.getEmpList();
+      this.empForm.reset(); 
     });
-  }
-
-  getEmpLists() {
-    this.empService.getEmpList().subscribe(res => {
-      this.employees = res;
-    });
+    this.router.navigate(['']);
   }
 
   resetEmpForm() {
@@ -64,7 +58,6 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   closeEmpForm() {
-    this.isForm = false;
-    this.getEmpLists();
+    this.router.navigate(['']);
   }
 }

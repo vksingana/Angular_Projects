@@ -12,6 +12,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class EmployeeFormComponent implements OnInit {
 
   isForm: boolean
+  isSubmit:boolean
   isUpdate: boolean
   isClose: boolean
   empForm: FormGroup
@@ -19,6 +20,7 @@ export class EmployeeFormComponent implements OnInit {
   empRequest: Employee = <Employee>{}
 
   constructor(private empService: EmployeeService) {
+    this.isSubmit = true;
     this.isForm = true;
     this.isUpdate = false;
     this.isClose = true;
@@ -32,7 +34,7 @@ export class EmployeeFormComponent implements OnInit {
       department: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]),
       employeeCode: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]+')]),
-      email: new FormControl('', [Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')])
+      email: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')])
     })
   }
   addEmpForm() {

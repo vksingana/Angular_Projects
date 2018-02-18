@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <form class="formoid-solid-purple" novalidate [formGroup]="empForm" (ngSubmit)="onSubmit(empForm)" #ngIf="isForm">
+    <div class="title">Add Employee</div>
+    <div class="form-group row">
+      <label for="empID">
+        <span>Employee ID</span>
+        <input type="text" formControlName="empID" placeholder="Employee ID" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-control">
+        <span class="error" *ngIf="empForm.get('empID').hasError('required') && empForm.get('empID').touched">
+          Employee ID is Required
+        </span>
+        <div class="error" *ngIf="empForm.get('empID').hasError('minlength')">
+          Minimum of 2 characters
+        </div>
+      </label>
+    </div>
+    <div class="form-group row">
+      <label for="jobTitle">
+        <span>Job Title</span>
+        <input type="text" formControlName="jobTitle" placeholder="Job Title" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-control">
+        <span class="error" *ngIf="empForm.get('jobTitle').hasError('required') && empForm.get('jobTitle').touched">
+          Job Title is Required
+        </span>
+      </label>
+    </div>
+    <div class="form-group row">
+      <label for="empName">
+        <span>Employee Name</span>
+        <input type="text" formControlName="empName" placeholder="Employee Name" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-control">
+        <span class="error" *ngIf="empForm.get('empName').hasError('required') && empForm.get('empName').touched">
+          Employee Name is Required
+        </span>
+        <div class="error" *ngIf="empForm.get('empName').hasError('minlength')">
+          Minimum of 4 characters
+        </div>
+      </label>
+    </div>
+    <div class="form-group row">
+      <label for="department">
+        <span>Department</span>
+        <input type="text" formControlName="department" placeholder="Department" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-control">
+        <span class="error" *ngIf="empForm.get('department').hasError('required') && empForm.get('department').touched">
+          Department is Required
+        </span>
+      </label>
+    </div>
+    <div class="form-group row">
+      <label for="phone">
+        <span>Phone Number</span>
+        <input type="text" formControlName="phone" placeholder="Phone Number" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-control">
+        <span class="error" *ngIf="empForm.get('phone').hasError('required') && empForm.get('phone').touched">
+          Phone Number is Required
+        </span>
+        <div class="error" *ngIf="empForm.get('phone').hasError('minlength')">
+          Invalid Phone Number
+        </div>
+      </label>
+    </div>
+    <div class="form-group row">
+      <label for="email">
+        <span>Email: </span>
+        <input type="text" formControlName="email" placeholder="Email" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-control">
+        <span class="error" *ngIf="empForm.get('email').hasError('required') && empForm.get('email').touched">
+          Email is Required
+        </span>
+        <div class="error" *ngIf="empForm.get('email').hasError('minlength')">
+          Invalid Email Address
+        </div>
+      </label>
+    </div>
+    <div class="form-group row btn-group ">
+      <div *ngIf="isSubmit" class="form-group ">
+        <button type="submit" class="btn btn-success" [disabled]="!empForm.valid" (click)="addEmpForm()">Submit</button>
+      </div>
+      <div *ngIf="isUpdate" class="form-group ">
+        <button type="submit" class="btn btn-success" [disabled]="!empForm.valid" (click)="updateEmpForm()">Update</button>
+      </div>
+      <div class="form-group">
+        <button type="reset" class="btn btn-warning" (click)="resetEmpForm()">
+          Reset</button>
+      </div>
+      <div *ngIf="isClose" class="form-group ">
+        <button type="submit" class="btn btn-success" (click)="closeEmpForm()">Close</button>
+      </div>
+    </div>
+  </form>
+</div>

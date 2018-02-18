@@ -1,0 +1,57 @@
+{
+  "Employees": [{
+      "id": 1,
+      "empID": "E1",
+      "jobTitle": "Program Directory",
+      "empName": "ew Haewenks",
+      "department": "IT",
+      "phone": "408-323234",
+      "email": "sdewewa@gmail.com"
+    },
+    {
+      "id": 3,
+      "empID": "E3",
+      "jobTitle": "Program Directory",
+      "empName": "Tom Hanks",
+      "department": "IT",
+      "phone": "408-2222222",
+      "email": "tomhanks@gmail.com"
+    },
+    {
+      "empID": "E4",
+      "jobTitle": "Program Directory",
+      "empName": "ew Haewenks",
+      "department": "IT",
+      "phone": "408-323234",
+      "email": "sdewewa@gmail.com",
+      "id": 4
+    },
+    {
+      "id": 4,
+      "jobTitle": "Program Directory",
+      "empName": "ew Haewenks",
+      "department": "IT",
+      "empID": "E4",
+      "phone": "408-323234",
+      "email": "sdewewa@gmail.com"
+    },
+    {
+      "empID": "dsds",
+      "jobTitle": "sdsdsd",
+      "empName": "sdsdsd",
+      "department": "sdsd",
+      "phone": "2255665544",
+      "email": "singana@gmail.com",
+      "id": 5
+    },
+    {
+      "empID": "kumak",
+      "jobTitle": "ksaskas",
+      "empName": "nkjnkjnk",
+      "department": "nkjnjkn",
+      "phone": "1111111111",
+      "email": "kumaasajs.sasas@gmail.com",
+      "id": 6
+    }
+  ]
+}

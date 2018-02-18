@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="wrapper">
+    <table class="table">
+      <thead class="thead bg-inverse text-white">
+        <th>Emp ID</th>
+        <th>Job Title</th>
+        <th>Employee Name</th>
+        <th>Depatment</th>
+        <th>Phone</th>
+        <th>Email</th>
+      </thead>
+      <tbody class="tbody striped">
+        <tr *ngFor="let emp of employees">
+          <td>{{emp.empID}}</td>
+          <td>{{emp.jobTitle}}</td>
+          <td>{{emp.empName}}</td>
+          <td>{{emp.department}}</td>
+          <td>{{emp.phone}}</td>
+          <td>{{emp.email}}</td>
+          <td class="btn btn-warning text-white" (click)="editEmp(emp)">Edit</td>
+          <td class="btn btn-danger text-white" (click)="deleteEmp(emp.id)">Delete</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

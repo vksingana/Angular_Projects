@@ -1,0 +1,120 @@
+<br>
+<div>
+  <button type="submit" class="btn btn-primary pull-right" (click)="add()">Add New</button>
+</div>
+<div class="container">
+  <div class="row">
+    <form class="col-md-6" [formGroup]="empForm" *ngIf="showForm">
+      <div class="form-group col-md-6">
+        <label for="empID">EmpID</label>
+        <input type="text" [ngModel]="empForm .empID" class="form-control" id="empID" formControlName="empID" />
+        <span *ngIf="empForm.controls.empID.invalid && (empForm.controls.empID.dirty || empForm.controls.empID.touched)" class="text-danger">
+          Employee ID Required.
+        </span>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="jobTitleName">JobTitle</label>
+        <input type="text" class="form-control" id="jobTitleName" formControlName="jobTitleName">
+        <span *ngIf="empForm.controls.jobTitleName.invalid && (empForm.controls.jobTitleName.dirty || empForm.controls.jobTitleName.touched)"
+          class="text-danger">
+          Job Title Required.
+        </span>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="empName">Employee Name:</label>
+        <input type="text" class="form-control" id="empName" formControlName="empName">
+        <span *ngIf="empForm.controls.empName.invalid && (empForm.controls.empName.dirty || empForm.controls.empName.touched)" class="text-danger">
+          Employee Name Required.
+        </span>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="department">Department: </label>
+        <input type="text" class="form-control" id="department" formControlName="department">
+        <span *ngIf="empForm.controls.department.invalid && (empForm.controls.department.dirty || empForm.controls.department.touched)"
+          class="text-danger">
+          Department Required.
+        </span>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="employeeCode">Employee Code</label>
+        <input type="text" class="form-control" id="employeeCode" formControlName="employeeCode">
+        <span *ngIf="empForm.controls.employeeCode.invalid && (empForm.controls.employeeCode.dirty || empForm.controls.employeeCode.touched)"
+          class="text-danger">
+          Employee Code Required.
+        </span>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+        <span *ngIf="empForm.controls.phoneNumber.invalid && (empForm.controls.phoneNumber.dirty || empForm.controls.phoneNumber.touched)"
+          class="text-danger">
+          Phone Number Required.
+        </span>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="emailAddress">Email</label>
+        <input type="text" class="form-control" id="emailAddress" formControlName="emailAddress">
+        <!-- <span *ngIf="empForm.controls.emailAddress.invalid || (empForm.controls.emailAddress.dirty || empForm.controls.emailAddress.touched)"
+          class="text-danger">
+          Email Required.
+        </span> -->
+        <div *ngIf="empForm.controls['emailAddress'].errors && !empForm.controls['emailAddress'].pristine" class="error-msg">
+          <div [hidden]="!empForm.controls['emailAddress'].errors.required"   class="text-danger">Email is required.</div>
+          <div [hidden]="!empForm.controls['emailAddress'].errors.pattern"   class="text-danger">Email is invalid.</div>
+        </div>
+      </div>
+      <div class=" row ">
+        <div *ngIf="isSubmit" class="form-group ">
+          <button type="submit" class="btn btn-success" [disabled]="!empForm.valid" (click)="onEmpFormSubmit()">Submit</button>
+        </div>
+        <div *ngIf="isValid" class="form-group ">
+          <button type="submit" class="btn btn-success" [disabled]="!empForm.valid" (click)="updateEmployee()">Update</button>
+        </div>
+        <div class="form-group ">
+          <button type="reset" class="btn btn-warning" (click)="removeObject()" ng-click="showme=false">
+            Reset</button>
+        </div>
+        <div *ngIf="isClose" class="form-group ">
+          <button type="submit" class="btn btn-success" (click)="close()">Close</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="table-respnsive">
+  <table class="table table-default">
+    <thead>
+      <tr>
+        <th>Emp Id</th>
+        <th>job Title</th>
+        <th>Employee Name</th>
+        <th>Department</th>
+        <th>Emp Code</th>
+        <th>phone Number</th>
+        <th>Email</th>
+        <th>Options</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of employees">
+        <td>{{person.empID}}</td>
+        <td>{{person.jobTitleName}}</td>
+        <td>
+          <a (click)="empDetals(person)">{{person.empName}}</a>
+        </td>
+        <td>{{person.department}}</td>
+        <td>{{person.employeeCode}}</td>
+        <td>{{person.phoneNumber}}</td>
+        <td>{{person.emailAddress}}</td>
+        <td>
+          <a class="btn btn-warning fa fa-edit" (click)="editEmployee(person)">Edit</a>
+        </td>
+        <td>
+          <a class="fa fa-trash btn btn-danger" (click)="empDelete(person.id)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -53,6 +53,21 @@ export class EmployeeFormComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  updateEmpForm(){
+    this.empRequest = <Employee>{};
+    this.empRequest.empID = this.empForm.controls['empID'].value;
+    this.empRequest.jobTitle = this.empForm.controls['jobTitle'].value;
+    this.empRequest.empName = this.empForm.controls['empName'].value;
+    this.empRequest.department = this.empForm.controls['department'].value;
+    this.empRequest.phone = this.empForm.controls['phone'].value;
+    this.empRequest.email = this.empForm.controls['email'].value;
+    this.empService.updateEmp(this.empRequest.id,this.empRequest).subscribe(res => {
+      console.log(res);
+      this.empService.getEmpList();
+      this.empForm.reset(); 
+    });
+  }
+
   resetEmpForm() {
     this.empForm.reset();
   }

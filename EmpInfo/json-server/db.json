@@ -1,0 +1,64 @@
+{
+  "Employees": [
+    {
+      "empID": "asasas",
+      "jobTitleName": "Program Directory",
+      "empName": "ew Haewenks",
+      "department": "IT",
+      "employeeCode": "E4",
+      "phoneNumber": "4082323234",
+      "emailAddress": "sdewewa@gmail.com",
+      "id": 1
+    },
+    {
+      "empID": "thanks",
+      "jobTitleName": "Program Directory",
+      "empName": "Tom Hanks",
+      "department": "IT",
+      "employeeCode": "E3",
+      "phoneNumber": "4083222222",
+      "emailAddress": "tomhanks@gmail.com",
+      "id": 3
+    },
+    {
+      "employeeCode": "E4",
+      "empID": "sdsd",
+      "jobTitleName": "Program Directory",
+      "empName": "ew Haewenks",
+      "department": "IT",
+      "phoneNumber": "408-323234",
+      "emailAddress": "sdewewa@gmail.com",
+      "id": 4
+    },
+    {
+      "id": 4,
+      "empID": "eewfse",
+      "jobTitleName": "Program Directory",
+      "empName": "ew Haewenks",
+      "department": "IT",
+      "employeeCode": "E4",
+      "phoneNumber": "408-323234",
+      "emailAddress": "sdewewa@gmail.com"
+    },
+    {
+      "empID": "dsds",
+      "jobTitleName": "sdsdsd",
+      "empName": "sdsdsd",
+      "department": "sdsd",
+      "employeeCode": "sdsd",
+      "phoneNumber": "2255665544",
+      "emailAddress": "singana@gmail.com",
+      "id": 5
+    },
+    {
+      "empID": "ddass",
+      "jobTitleName": "ksaskas",
+      "empName": "nkjnkjnk",
+      "department": "nkjnjkn",
+      "employeeCode": "jknknjkn",
+      "phoneNumber": "1111111111",
+      "emailAddress": "kumaasajs.sasas@gmail.com",
+      "id": 6
+    }
+  ]
+}

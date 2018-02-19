@@ -68,18 +68,18 @@
         </div>
       </label>
     </div>
-    <div class="form-group row btn-group ">
-      <div *ngIf="isSubmit" class="form-group ">
+    <div class="row btn-group ">
+      <div *ngIf="isSubmit" >
         <button type="submit" class="btn btn-success" (click)="addEmpForm(empForm)">Submit</button>
       </div>
-      <div *ngIf="isUpdate" class="form-group ">
+      <div *ngIf="isUpdate">
         <button type="submit" class="btn btn-success" [disabled]="!empForm.valid" (click)="updateEmpForm()">Update</button>
       </div>
-      <div class="form-group">
+      <div >
         <button type="reset" class="btn btn-warning" (click)="resetEmpForm()">
           Reset</button>
       </div>
-      <div *ngIf="isClose" class="form-group ">
+      <div *ngIf="isClose">
         <button type="submit" class="btn btn-success" (click)="closeEmpForm()">Close</button>
       </div>
     </div>

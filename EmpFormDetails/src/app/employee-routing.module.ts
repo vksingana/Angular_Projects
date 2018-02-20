@@ -1,6 +1,7 @@
 import { PageNotFoundComponent } from './not-found.component';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { EmpdetailsComponent } from './empdetails/empdetails.component';
 
 import { Routes, RouterModule } from "@angular/router";
 import { NgModule } from '@angular/core';
@@ -15,6 +16,10 @@ const empRoutes: Routes = [
     {
         path: '',
         component: EmployeelistComponent
+    },
+    {
+        path: ':id',
+        component: EmpdetailsComponent
     },
     {
         path: '**',

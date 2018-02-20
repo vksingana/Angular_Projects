@@ -15,7 +15,8 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
-import { PageNotFoundComponent } from './not-found.component'
+import { PageNotFoundComponent } from './not-found.component';
+import { EmpdetailsComponent } from './empdetails/empdetails.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PageNotFoundComponent } from './not-found.component'
     NavigationComponent,
     EmployeeFormComponent,
     EmployeelistComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EmpdetailsComponent
   ],
   imports: [
     BrowserModule,

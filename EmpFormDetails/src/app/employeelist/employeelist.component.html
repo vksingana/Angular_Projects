@@ -11,7 +11,7 @@
       </thead>
       <tbody class="tbody striped">
         <tr *ngFor="let emp of employees">
-          <td>{{emp.empID}}</td>
+          <td><a routerLink= "/{{emp.id}}">{{emp.empID}}</a></td>
           <td>{{emp.jobTitle}}</td>
           <td>{{emp.empName}}</td>
           <td>{{emp.department}}</td>

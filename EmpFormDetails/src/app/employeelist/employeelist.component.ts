@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee.interface'
 import { EmployeeService } from '../employee.service';
+import { Router } from '@angular/router';
+import { Route } from '@angular/router/src/config';
+
 
 @Component({
   selector: 'app-employeelist',
@@ -12,7 +15,7 @@ export class EmployeelistComponent implements OnInit {
   employees: Employee;
   updateEmpid: any;
 
-  constructor(private empService: EmployeeService) {
+  constructor(private empService: EmployeeService , private router: Router) {
     this.getEmpLists();
   }
 
@@ -20,9 +23,8 @@ export class EmployeelistComponent implements OnInit {
   }
 
   editEmp(emp) {
-    debugger
     this.empService.patchValueData(emp);
-    this.updateEmpid = emp.id;
+    this.router.navigate(['addEmp']);
   }
 
   getEmpLists() {

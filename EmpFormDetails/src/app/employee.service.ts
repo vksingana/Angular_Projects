@@ -3,11 +3,14 @@ import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { Subject } from 'rxjs/Subject'
+import { debuglog } from 'util';
 
 @Injectable()
 export class EmployeeService {
-  empForm: any;
-  
+  resn: Observable<Response>;
+  employeeData: any;
+
   baseURL = "http://localhost:3000/Employees";
   constructor(private http: Http) { }
 
@@ -16,7 +19,6 @@ export class EmployeeService {
   }
 
   addEmp(empObj: Employee): Observable<Response> {
-    // debugger
     return this.http.post(this.baseURL, empObj).map(res => res.json());
   }
 
@@ -28,15 +30,11 @@ export class EmployeeService {
     return this.http.delete(this.baseURL + '/' + id).map(res => res.json());
   }
 
+  getEmp(id: number): Observable<any> {
+    this.resn = this.http.get(this.baseURL + '/' + id).map(res => res.json());
+    return this.resn;
+  }
   patchValueData(employeeData) {
-    debugger
-    this.empForm.patchValue({
-      'empID': employeeData.empID,
-      'jobTitle': employeeData.jobTitle,
-      'empName': employeeData.empName,
-      'department': employeeData.department,
-      'phone': employeeData.phone,
-      'email': employeeData.email,
-    });
+    this.employeeData = employeeData;
   }
 }

@@ -10,8 +10,7 @@ import { EmployeeService } from '../employee.service';
 export class EmployeelistComponent implements OnInit {
   empForm: any;
   employees: Employee;
-  updateEmpid:any;
-
+  updateEmpid: any;
 
   constructor(private empService: EmployeeService) {
     this.getEmpLists();
@@ -21,21 +20,10 @@ export class EmployeelistComponent implements OnInit {
   }
 
   editEmp(emp) {
-    this.patchValueData(emp);
-    this.updateEmpid=emp.id;
+    debugger
+    this.empService.patchValueData(emp);
+    this.updateEmpid = emp.id;
   }
-
-  patchValueData(employeeData) {
-    this.empForm.patchValue({
-      'empID': employeeData.empID,
-      'jobTitle': employeeData.jobTitle,
-      'empName': employeeData.empName,
-      'department': employeeData.department,
-      'phone': employeeData.phone,
-      'email': employeeData.email,
-    });
-  }
-  
 
   getEmpLists() {
     this.empService.getEmpList().subscribe(res => {

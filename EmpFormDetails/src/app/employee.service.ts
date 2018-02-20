@@ -6,7 +6,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class EmployeeService {
-
+  empForm: any;
+  
   baseURL = "http://localhost:3000/Employees";
   constructor(private http: Http) { }
 
@@ -25,5 +26,17 @@ export class EmployeeService {
 
   deleteEmp(id) {
     return this.http.delete(this.baseURL + '/' + id).map(res => res.json());
+  }
+
+  patchValueData(employeeData) {
+    debugger
+    this.empForm.patchValue({
+      'empID': employeeData.empID,
+      'jobTitle': employeeData.jobTitle,
+      'empName': employeeData.empName,
+      'department': employeeData.department,
+      'phone': employeeData.phone,
+      'email': employeeData.email,
+    });
   }
 }

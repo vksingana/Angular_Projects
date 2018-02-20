@@ -1,24 +1,31 @@
 <br>
-<div class="row justify-content-center">
-  <ul class="list-group w-50">
-    <li class="list-group-item active text-center">{{ person.empName }} Details</li>
-    <li class="list-group-item">Emp ID:
-      <span class="btn-dark">{{ person.empID }}</span>
-    </li>
-    <li class="list-group-item">Job Title:
-      <span class="btn-dark">{{ person.jobTitle }}</span>
-    </li>
-    <li class="list-group-item">Emp Name:
-      <span class="btn-dark">{{ person.empName }}</span>
-    </li>
-    <li class="list-group-item">Department:
-      <span class="btn-dark">{{ person.department }}</span>
-    </li>
-    <li class="list-group-item">Phone:
-      <span class="btn-dark">{{ person.phone }}</span>
-    </li>
-    <li class="list-group-item">Email:
-      <span class="btn-dark">{{ person.email }}</span>
-    </li>
-  </ul>
+<div>
+  <div class="justify-content-end">
+    <ul class="list-group w-50">
+      <li class="list-group-item active text-center">{{ person.empName }} Details</li>
+      <li class="list-group-item">Emp ID:
+        <span class="btn btn-info text-white text-right text-justify">{{ person.empID }}</span>
+      </li>
+      <li class="list-group-item">Job Title:
+        <span class="btn btn-info text-white text-right text-justify">{{ person.jobTitle }}</span>
+      </li>
+      <li class="list-group-item">Emp Name:
+        <span class="btn btn-info text-white text-right text-justify">{{ person.empName }}</span>
+      </li>
+      <li class="list-group-item">Department:
+        <span class="btn btn-info text-white text-right text-justify">{{ person.department }}</span>
+      </li>
+      <li class="list-group-item">Phone:
+        <span class="btn btn-info text-white text-right text-justify">{{ person.phone }}</span>
+      </li>
+      <li class="list-group-item">Email:
+        <span class="btn btn-info text-white text-right text-justify">{{ person.email }}</span>
+      </li>
+    </ul>
+  </div>
+  <br>
+  <div class="justify-content-center ">
+    <button class="btn btn-warning submit" (click)="edit(person)">Edit</button>
+    <button class="btn btn-success submit" (click)="close()">Close</button>
+  </div>
 </div>

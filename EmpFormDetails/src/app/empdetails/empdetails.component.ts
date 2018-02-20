@@ -12,7 +12,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class EmpdetailsComponent implements OnInit {
 
   person: Employee = <Employee>{};
-  constructor(private empService: EmployeeService, private route: ActivatedRoute) { }
+  constructor(private empService: EmployeeService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -24,5 +24,16 @@ export class EmpdetailsComponent implements OnInit {
     this.empService.getEmp(id).subscribe(res => {
       this.person = res;
     })
+  }
+
+  close() {
+    this.router.navigate(['']);
+  }
+
+  edit(emp) {
+    alert(emp);
+    this.empService.getEmp(emp.id).subscribe(res=>res);
+    this.router.navigate(['addEmp']);
+    
   }
 }

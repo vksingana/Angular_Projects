@@ -1,78 +1,57 @@
 <br>
-<div class="container">
-  <form class="formoid-solid-purple" [formGroup]="empForm" (ngSubmit)="onSubmit(empForm)">
-    <div class="form-group row col-lg-6 col-md-6 col-sm-12 col-xs-12 form-control">
-      <label for="empID">
-        <span>Employee ID:&nbsp; &nbsp;</span>
-        <input type="text" formControlName="empID" placeholder="Employee ID">
-        <span class="alert alert-danger" *ngIf="empForm.get('empID').hasError('required') && empForm.get('empID').touched">
-          ID is Required
-        </span>
-        <span class="alert alert-danger" *ngIf="empForm.get('empID').hasError('minlength')">
-          Min of 2 characters
-        </span>
-      </label>
+<div class="justify-content-end">
+  <form [formGroup]="empForm" (ngSubmit)="onSubmit(empForm)">
+    <div>
+      <label for="empID" class="form-group row col-md-6">Employee ID:&nbsp; &nbsp; </label>
+      <input type="text" class="col-md-4  form-control" formControlName="empID" placeholder="Employee ID">
+      <span class="text-danger" *ngIf="empForm.get('empID').hasError('required') && empForm.get('empID').touched">
+        ID is Required
+      </span>
+      <span class="text-danger" *ngIf="empForm.get('empID').hasError('minlength')">
+        Min of 2 characters
+      </span>
     </div>
-    <div class="form-group row col-lg-6 col-md-6 col-sm-12 col-xs-12 form-control">
-      <label for="jobTitle">
-        <span>Job Title: &nbsp;&nbsp;</span>
-        <input type="text" formControlName="jobTitle" placeholder="Job Title">
-        <span class="alert alert-danger" *ngIf="empForm.get('jobTitle').hasError('required') && empForm.get('jobTitle').touched">
-          Job Title is Required
-        </span>
-      </label>
-    </div>
-    <div class="form-group row col-lg-6 col-md-6 col-sm-12 col-xs-12 form-control">
-      <label for="empName">
-        <span>Employee Name:&nbsp; &nbsp;</span>
-        <input type="text" formControlName="empName" placeholder="Employee Name">
-        <span class="alert alert-danger" *ngIf="empForm.get('empName').hasError('required') && empForm.get('empName').touched">
-          Name is Required
-        </span>
-        <span class="alert alert-danger" *ngIf="empForm.get('empName').hasError('minlength')">
-          Min of 4 characters
-        </span>
-      </label>
-    </div>
-    <div class="form-group row col-lg-6 col-md-6 col-sm-12 col-xs-12 form-control">
-      <label for="department">
-        <span>Department:&nbsp; &nbsp;</span>
-        <input type="text" formControlName="department" placeholder="Department">
-        <span class="alert alert-danger" *ngIf="empForm.get('department').hasError('required') && empForm.get('department').touched">
-          Department is Required
-        </span>
-      </label>
-    </div>
-    <div class="form-group row col-lg-6 col-md-6 col-sm-12 col-xs-12 form-control">
-      <label for="phone">
-        <span>Phone Number:&nbsp; &nbsp;</span>
-        <input type="text" formControlName="phone" placeholder="Phone Number">
-        <span class="alert alert-danger" *ngIf="empForm.get('phone').hasError('required') && empForm.get('phone').touched">
-          Number is Required
-        </span>
-        <span class="alert alert-danger" *ngIf="empForm.get('phone').hasError('minlength')">
-          Invalid Phone Number
-        </span>
-      </label>
-    </div>
-    <div class="form-group row col-lg-6 col-md-6 col-sm-12 col-xs-12 form-control">
-      <label for="email">
-        <span>Email:&nbsp; &nbsp;</span>
-        <input type="text" formControlName="email" placeholder="Email">
-        <span class="alert alert-danger" *ngIf="empForm.get('email').hasError('required') && empForm.get('email').touched">
-          Email is Required
-        </span>
-        <span class="alert alert-danger" *ngIf="empForm.get('email').hasError('pattern')">
-          Invalid Email
-        </span>
-      </label>
-    </div>
+    <label for="jobTitle" class="form-group row col-md-6">Job Title: &nbsp;&nbsp; </label>
+    <input type="text" class="col-md-4  form-control" formControlName="jobTitle" placeholder="Job Title">
+    <span class="text-danger" *ngIf="empForm.get('jobTitle').hasError('required') && empForm.get('jobTitle').touched">
+      Job Title is Required
+    </span>
+    <label for="empName" class="form-group row col-md-6">Employee Name:&nbsp; &nbsp; </label>
+    <input type="text" class="col-md-4  form-control" formControlName="empName" placeholder="Employee Name">
+    <span class="text-danger" *ngIf="empForm.get('empName').hasError('required') && empForm.get('empName').touched">
+      Name is Required
+    </span>
+    <span class="text-danger" *ngIf="empForm.get('empName').hasError('minlength')">
+      Min of 4 characters
+    </span>
+    <label for="department" class="form-group row col-md-6">Department:&nbsp; &nbsp; </label>
+    <input type="text" class="col-md-4  form-control" formControlName="department" placeholder="Department">
+    <span class="text-danger" *ngIf="empForm.get('department').hasError('required') && empForm.get('department').touched">
+      Department is Required
+    </span>
+    <label for="phone" class="form-group row col-md-6">Phone Number:&nbsp; &nbsp; </label>
+    <input type="text" class="col-md-4  form-control" formControlName="phone" placeholder="Phone Number">
+    <span class="text-danger" *ngIf="empForm.get('phone').hasError('required') && empForm.get('phone').touched">
+      Number is Required
+    </span>
+    <span class="text-danger" *ngIf="empForm.get('phone').hasError('minlength')">
+      Invalid Phone Number
+    </span>
+    <label for="email" class="form-group row col-md-6">Email:&nbsp; &nbsp; </label>
+    <input type="text" class="col-md-4  form-control" formControlName="email" placeholder="Email">
+    <span class="text-danger" *ngIf="empForm.get('email').hasError('required') && empForm.get('email').touched">
+      Email is Required
+    </span>
+    <span class="text-danger" *ngIf="empForm.get('email').hasError('pattern')">
+      Invalid Email
+    </span>
+    <br>
     <div class="row btn-group ">
       <div *ngIf="isSubmit">
         <button type="submit" class="btn btn-success" (click)="addEmpForm(empForm)">Submit</button>
       </div>
       <div *ngIf="isUpdate">
-        <button type="submit" class="btn btn-success" (click)="updateEmpForm()">Update</button>
+        <button type="submit" class="btn btn-success" (click)="updateEmpForm(empForm)">Update</button>
       </div>
       <div>
         <button type="reset" class="btn btn-warning" (click)="resetEmpForm()">

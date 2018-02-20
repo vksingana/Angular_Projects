@@ -32,11 +32,11 @@ export class EmployeeFormComponent implements OnInit {
   ngOnInit() {
 
     this.empForm = this.formBuilder.group({
-      empID: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(12)]),
-      jobTitle: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(25)]),
+      empID: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      jobTitle: new FormControl('', [Validators.required]),
       empName: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(15)]),
       department: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]),
-      phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]+')]),
+      phone: new FormControl('', [Validators.required, Validators.pattern('[-][0-9]'), Validators.minLength(10), Validators.maxLength(10)]),
       email: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')])
     })
 
@@ -56,8 +56,6 @@ export class EmployeeFormComponent implements OnInit {
       });
     }
   }
-
-
 
   addEmpForm(empForm) {
     this.empRequest = <Employee>{};
@@ -96,6 +94,7 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   closeEmpForm() {
+    this.empForm.reset();
     this.router.navigate(['']);
   }
 }

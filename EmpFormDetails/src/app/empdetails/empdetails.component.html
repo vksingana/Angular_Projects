@@ -1,30 +1,30 @@
 <br>
 <div>
   <div class="justify-content-end">
-    <ul class="list-group w-50">
-      <li class="list-group-item active text-center">{{ person.empName }} Details</li>
-      <li class="list-group-item">Emp ID:
-        <span class="btn btn-info text-white text-right text-justify">{{ person.empID }}</span>
+    <ul class="list-group w-50 ">
+      <li class="list-group-item active text-center  bg-dark">{{ person.empName }} Details</li>
+      <li class="list-group-item bg-info ">Emp ID:
+        <span class="text-white text-right text-justify">{{ person.empID }}</span>
       </li>
-      <li class="list-group-item">Job Title:
-        <span class="btn btn-info text-white text-right text-justify">{{ person.jobTitle }}</span>
+      <li class="list-group-item bg-info">Job Title:
+        <span class=" text-white text-right text-justify ">{{ person.jobTitle }}</span>
       </li>
-      <li class="list-group-item">Emp Name:
-        <span class="btn btn-info text-white text-right text-justify">{{ person.empName }}</span>
+      <li class="list-group-item bg-info">Emp Name:
+        <span class="text-white text-right text-justify">{{ person.empName }}</span>
       </li>
-      <li class="list-group-item">Department:
-        <span class="btn btn-info text-white text-right text-justify">{{ person.department }}</span>
+      <li class="list-group-item bg-info">Department:
+        <span class="text-white text-right text-justify">{{ person.department }}</span>
       </li>
-      <li class="list-group-item">Phone:
-        <span class="btn btn-info text-white text-right text-justify">{{ person.phone }}</span>
+      <li class="list-group-item bg-info">Phone:
+        <span class="text-white text-right text-justify">{{ person.phone }}</span>
       </li>
-      <li class="list-group-item">Email:
-        <span class="btn btn-info text-white text-right text-justify">{{ person.email }}</span>
+      <li class="list-group-item bg-info">Email:
+        <span class="text-white text-right text-justify">{{ person.email }}</span>
       </li>
     </ul>
   </div>
   <br>
-  <div class="justify-content-center ">
+  <div class="d-inliness">
     <button class="btn btn-warning submit" (click)="edit(person)">Edit</button>
     <button class="btn btn-success submit" (click)="close()">Close</button>
   </div>

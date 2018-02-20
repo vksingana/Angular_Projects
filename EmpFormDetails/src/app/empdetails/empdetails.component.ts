@@ -31,9 +31,7 @@ export class EmpdetailsComponent implements OnInit {
   }
 
   edit(emp) {
-    alert(emp);
-    this.empService.getEmp(emp.id).subscribe(res=>res);
+    this.empService.patchValueData(emp);
     this.router.navigate(['addEmp']);
-    
   }
 }
